@@ -1,19 +1,153 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#d9e6f2"
+    android:padding="24dp">
+
+    <!-- Título -->
+
+    <!-- Subtítulo -->
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/titulo"
+        android:layout_width="161dp"
+        android:layout_height="72dp"
+        android:gravity="center"
+        android:text="¡Bienvenido a\nTeleTrivia!"
+        android:textColor="#000000"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
+
+    <TextView
+        android:id="@+id/subtitulo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="La app diseñada para testear tu conocimiento y retar a tus amigos!\nA continuación, elija los parámetros de juego"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Label Categoría -->
+    <TextView
+        android:id="@+id/labelCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Spinner Categoría -->
+
+    <!-- Label Cantidad -->
+
+    <Spinner
+        android:id="@+id/spinnerCategoria"
+        android:layout_width="342dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelCategoria"
+        app:layout_constraintVertical_bias="0.031" />
+
+    <TextView
+        android:id="@+id/labelCantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCategoria"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- EditText Cantidad -->
+
+    <!-- Label Dificultad -->
+
+    <EditText
+        android:id="@+id/cantidad"
+        android:layout_width="337dp"
+        android:layout_height="49dp"
+        android:backgroundTint="@android:color/darker_gray"
+        android:hint="# Preguntas"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelCantidad"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <TextView
+        android:id="@+id/labelDificultad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dificultad:"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/cantidad"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <!-- Spinner Dificultad -->
+
+    <!-- Botón Comprobar Conexión -->
+
+    <!-- Botón Comenzar -->
+
+    <Spinner
+        android:id="@+id/spinnerDificultad"
+        android:layout_width="340dp"
+        android:layout_height="51dp"
+        android:backgroundTint="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/labelDificultad"
+        app:layout_constraintVertical_bias="0.108" />
+
+    <Button
+        android:id="@+id/btnComprobarConexion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Comprobar Conexión"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/spinnerDificultad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnComenzar"/>
+
+
+    <Button
+        android:id="@+id/btnComenzar"
+        android:layout_width="183dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:enabled="false"
+        android:text="Comenzar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnComprobarConexion"
+        app:layout_constraintTop_toBottomOf="@id/spinnerDificultad"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
